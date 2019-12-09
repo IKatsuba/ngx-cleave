@@ -18,14 +18,27 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { isPlatformBrowser } from '@angular/common';
 import * as Cleave from 'cleave.js/dist/cleave.js';
 
+/**
+ * Forced casting to boolean type
+ * @param value
+ */
 export function coerceBooleanProperty(value: any): boolean {
   return value != null && `${value}` !== 'false';
 }
 
+/**
+ * Forced casting to number type
+ * @param value
+ * @param fallbackValue
+ */
 export function coerceNumberProperty(value: any, fallbackValue = 0) {
   return _isNumberValue(value) ? Number(value) : fallbackValue;
 }
 
+/**
+ *
+ * @internal
+ */
 export function _isNumberValue(value: any): boolean {
   return !isNaN(parseFloat(value as any)) && !isNaN(Number(value));
 }
@@ -57,23 +70,95 @@ export type NumeralThousandsGroupStyle = 'thousand' | 'lakh' | 'wan' | 'none';
 })
 export class NgxCleaveDirective implements OnInit, OnDestroy, ControlValueAccessor, OnChanges {
   private static ignoredProperties = ['emitRawValue'];
+  /**
+   * Triggered after credit card type changes.
+   * The unique argument type is the type of the detected credit
+   */
   @Output('ngxCleaveCreditCardTypeChanged') creditCardTypeChanged = new EventEmitter<CreditCardTypes>();
 
+  /**
+   * A mode of Cleave.js
+   */
   @Input('ngxCleave') public mode: CleaveMode;
+
+  /**
+   * A String value indicates the country region code for phone number formatting.
+   * You can find your country code in [ISO 3166-1 alpha-2]{@link https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements} list.
+   */
   @Input('ngxCleavePhoneRegionCode') phoneRegionCode = 'AU';
+
+  /**
+   * An Array value indicates the date pattern.
+   * Since it's an input field, leading 0 before date and month is required. To indicate what patterns it should apply, you can use: 'Y', 'y', 'm' and 'd'.
+   */
   @Input('ngxCleaveDatePattern') datePattern: DatePattern = ['d', 'm', 'Y'];
+
+  /**
+   * An date String value indicates the min date boundary.
+   * The date string format follows as ISO 8601 date format YYYY-MM-DD
+   */
   @Input('ngxCleaveDateMin') dateMin: string;
+
+  /**
+   * An date String value indicates the max date boundary.
+   * The date string format follows as ISO 8601 date format YYYY-MM-DD
+   */
   @Input('ngxCleaveDateMax') dateMax: string;
+
+  /**
+   * An Array value indicates the time pattern.
+   * Since it's an input field, leading 0 before hour, minute and second is required. To indicate what patterns it should apply, you can use: 'h', 'm' and 's'.
+   */
   @Input('ngxCleaveTimePattern') timePattern: TimePattern = ['h', 'm', 's'];
+
+  /**
+   * A String value indicates time format
+   */
   @Input('ngxCleaveTimeFormat') timeFormat: TimeFormat = '12';
+
+  /**
+   * A String value indicates the thousands separator grouping style.
+   * It accepts three preset value:
+   * - thousand: Thousand numbering group style. It groups numbers in thousands and the delimiter occurs every 3 digits. 1,234,567.89
+   * - lakh: Indian numbering group style. It groups the rightmost 3 digits in a similar manner to regular way but then groups every 2 digits thereafter. 12,34,567.89
+   * - wan: Chinese numbering group style. It groups numbers in 10-thousand(万, 萬) and the delimiter occurs every 4 digits. 123,4567.89
+   * - none: Does not group thousands. 1234567.89
+   */
   @Input('ngxCleaveNumeralThousandsGroupStyle') numeralThousandsGroupStyle: NumeralThousandsGroupStyle = 'thousand';
+
+  /**
+   * A String value indicates the numeral decimal mark.
+   * Decimal mark can be different in handwriting, and for delimiter as well.
+   */
   @Input('ngxCleaveNumeralDecimalMark') numeralDecimalMark = '.';
+
+  /**
+   * An Array value indicates the groups to format the input value. It will insert delimiters in between these groups.
+   * This option is ignored by creditCard, phone, date and numeral shortcuts mode.
+   */
   @Input('ngxCleaveBlocks') blocks: number[];
+
+  /**
+   * A String value indicates the delimiter to use in formatting.
+   */
   @Input('ngxCleaveDelimiter') delimiter: string;
+
+  /**
+   * An Array value indicates the multiple delimiters to use in formatting.
+   * This option is ignored by creditCard, phone, date and numeral shortcuts mode.
+   * When delimiters array is defined, single delimiter option is ignored.
+   */
   @Input('ngxCleaveDelimiters') delimiters: string[];
+
+  /**
+   * A String value indicates the prepend string. It can't be removed or changed in the input field.
+   */
   @Input('ngxCleavePrefix') prefix: string;
   private cleave: Cleave;
 
+  /**
+   * @internal
+   */
   constructor(private elementRef: ElementRef<HTMLInputElement>,
               @Inject(PLATFORM_ID) private platformId,
               private renderer: Renderer2) {
@@ -81,6 +166,10 @@ export class NgxCleaveDirective implements OnInit, OnDestroy, ControlValueAccess
 
   private _lowercase = false;
 
+  /**
+   * A Boolean value indicates if it converts value to lowercase letters.
+   * lowercase doesn't work on it's own, you have to either specify the shortcuts mode or blocks option to enable the formatter.
+   */
   @Input('ngxCleaveLowercase')
   get lowercase(): boolean {
     return this._lowercase;
@@ -92,6 +181,10 @@ export class NgxCleaveDirective implements OnInit, OnDestroy, ControlValueAccess
 
   private _uppercase = false;
 
+  /**
+   * A Boolean value indicates if it converts value to uppercase letters.
+   * uppercase doesn't work on it's own, you have to either specify the shortcuts mode or blocks option to enable the formatter.
+   */
   @Input('ngxCleaveUppercase')
   get uppercase(): boolean {
     return this._uppercase;
@@ -103,6 +196,11 @@ export class NgxCleaveDirective implements OnInit, OnDestroy, ControlValueAccess
 
   private _numericOnly = false;
 
+  /**
+   * A Boolean value indicates if it only allows numeric letters (0-9).
+   * Ignored by creditCard and date shortcuts mode, the value will always be true.
+   * numericOnly doesn't work on it's own, you have to either specify the shortcuts mode or blocks option to enable the formatter.
+   */
   @Input('ngxCleaveNumericOnly')
   get numericOnly(): boolean {
     return this._numericOnly;
@@ -114,6 +212,9 @@ export class NgxCleaveDirective implements OnInit, OnDestroy, ControlValueAccess
 
   private _rawValueTrimPrefix = false;
 
+  /**
+   * A Boolean value indicates if to trim prefix in calling getRawValue() or getting rawValue in AngularJS or ReactJS component.
+   */
   @Input('ngxCleaveRawValueTrimPrefix')
   get rawValueTrimPrefix(): boolean {
     return this._rawValueTrimPrefix;
@@ -125,6 +226,9 @@ export class NgxCleaveDirective implements OnInit, OnDestroy, ControlValueAccess
 
   private _noImmediatePrefix = false;
 
+  /**
+   * A boolean value that if true, will only add the prefix once the user enters values. Useful if you need to use placeholders.
+   */
   @Input('ngxCleaveNoImmediatePrefix')
   get noImmediatePrefix(): boolean {
     return this._noImmediatePrefix;
@@ -136,6 +240,10 @@ export class NgxCleaveDirective implements OnInit, OnDestroy, ControlValueAccess
 
   private _delimiterLazyShow = false;
 
+  /**
+   * A boolean value that if true, will lazy add the delimiter only when the user starting typing the next group section
+   * This option is ignored by phone, and numeral shortcuts mode.
+   */
   @Input('ngxCleaveDelimiterLazyShow')
   get delimiterLazyShow(): boolean {
     return this._delimiterLazyShow;
@@ -147,6 +255,10 @@ export class NgxCleaveDirective implements OnInit, OnDestroy, ControlValueAccess
 
   private _stripLeadingZeroes = true;
 
+  /**
+   * A Boolean value indicates if zeroes appearing at the beginning of the number should be stripped out.
+   * This also prevents a number like "100,000" to disappear if the leading "1" is deleted.
+   */
   @Input('ngxCleaveStripLeadingZeroes')
   get stripLeadingZeroes(): boolean {
     return this._stripLeadingZeroes;
@@ -158,6 +270,9 @@ export class NgxCleaveDirective implements OnInit, OnDestroy, ControlValueAccess
 
   private _signBeforePrefix = false;
 
+  /**
+   * A Boolean value indicates if the sign of the numeral should appear before the prefix.
+   */
   @Input('ngxCleaveSignBeforePrefix')
   get signBeforePrefix(): boolean {
     return this._signBeforePrefix;
@@ -169,6 +284,9 @@ export class NgxCleaveDirective implements OnInit, OnDestroy, ControlValueAccess
 
   private _numeralPositiveOnly = false;
 
+  /**
+   * A Boolean value indicates if it only allows positive numeral value
+   */
   @Input('ngxCleaveNumeralPositiveOnly')
   get numeralPositiveOnly(): boolean {
     return this._numeralPositiveOnly;
@@ -180,6 +298,9 @@ export class NgxCleaveDirective implements OnInit, OnDestroy, ControlValueAccess
 
   private _numeralDecimalScale = 2;
 
+  /**
+   * An Int value indicates the numeral integer scale.
+   */
   @Input('ngxCleaveNumeralDecimalScale')
   get numeralDecimalScale(): number {
     return this._numeralDecimalScale;
@@ -191,6 +312,9 @@ export class NgxCleaveDirective implements OnInit, OnDestroy, ControlValueAccess
 
   private _numeralIntegerScale;
 
+  /**
+   * An Int value indicates the numeral decimal scale.
+   */
   @Input('ngxCleaveNumeralIntegerScale')
   get numeralIntegerScale(): number {
     return this._numeralIntegerScale;
@@ -202,12 +326,16 @@ export class NgxCleaveDirective implements OnInit, OnDestroy, ControlValueAccess
 
   private _creditCardStrictMode = false;
 
+  /**
+   * A Boolean value indicates if enable credit card strict mode.
+   * Expand use of 19-digit PANs for supported credit card.
+   */
   @Input('ngxCleaveCreditCardStrictMode')
-  get creditCardStrictMode() {
+  get creditCardStrictMode(): boolean {
     return this._creditCardStrictMode;
   }
 
-  set creditCardStrictMode(value) {
+  set creditCardStrictMode(value: boolean) {
     this._creditCardStrictMode = coerceBooleanProperty(value);
   }
 
