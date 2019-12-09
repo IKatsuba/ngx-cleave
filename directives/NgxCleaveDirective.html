@@ -1,0 +1,2726 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>ngx-cleave documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">ngx-cleave documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content directive">
+                   <div class="content-data">
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li>Directives</li>
+  <li>NgxCleaveDirective</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>libs/ngx-cleave/src/lib/ngx-cleave.directive.ts</code>
+        </p>
+
+
+            <p class="comment">
+                <h3>Implements</h3>
+            </p>
+            <p class="comment">
+                            <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+                            <code><a href="https://angular.io/api/core/OnDestroy" target="_blank" >OnDestroy</a></code>
+                            <code><a href="https://angular.io/api/forms/ControlValueAccessor" target="_blank" >ControlValueAccessor</a></code>
+                            <code><a href="https://angular.io/api/core/OnChanges" target="_blank" >OnChanges</a></code>
+            </p>
+
+
+        <section>
+            <h3>Metadata</h3>
+            <table class="table table-sm table-hover">
+                <tbody>
+                    <tr>
+                        <td class="col-md-3">Providers</td>
+                        <td class="col-md-9">
+                            <code>
+                                { provide: NG_VALUE_ACCESSOR, useExisting: forwardRef(() &#x3D;&gt; NgxCleaveDirective), multi: true }
+                            </code>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="col-md-3">Selector</td>
+                        <td class="col-md-9"><code>input[ngxCleave],textarea[ngxCleave]</code></td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </section>
+
+            <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#registerOnChange">registerOnChange</a>
+                            </li>
+                            <li>
+                                <a href="#registerOnTouched">registerOnTouched</a>
+                            </li>
+                            <li>
+                                <a href="#setDisabledState">setDisabledState</a>
+                            </li>
+                            <li>
+                                <a href="#writeValue">writeValue</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Inputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#ngxCleave">ngxCleave</a>
+                            </li>
+                            <li>
+                                <a href="#ngxCleaveBlocks">ngxCleaveBlocks</a>
+                            </li>
+                            <li>
+                                <a href="#ngxCleaveCreditCardStrictMode">ngxCleaveCreditCardStrictMode</a>
+                            </li>
+                            <li>
+                                <a href="#ngxCleaveDateMax">ngxCleaveDateMax</a>
+                            </li>
+                            <li>
+                                <a href="#ngxCleaveDateMin">ngxCleaveDateMin</a>
+                            </li>
+                            <li>
+                                <a href="#ngxCleaveDatePattern">ngxCleaveDatePattern</a>
+                            </li>
+                            <li>
+                                <a href="#ngxCleaveDelimiter">ngxCleaveDelimiter</a>
+                            </li>
+                            <li>
+                                <a href="#ngxCleaveDelimiterLazyShow">ngxCleaveDelimiterLazyShow</a>
+                            </li>
+                            <li>
+                                <a href="#ngxCleaveDelimiters">ngxCleaveDelimiters</a>
+                            </li>
+                            <li>
+                                <a href="#ngxCleaveEmitRawValue">ngxCleaveEmitRawValue</a>
+                            </li>
+                            <li>
+                                <a href="#ngxCleaveLowercase">ngxCleaveLowercase</a>
+                            </li>
+                            <li>
+                                <a href="#ngxCleaveNoImmediatePrefix">ngxCleaveNoImmediatePrefix</a>
+                            </li>
+                            <li>
+                                <a href="#ngxCleaveNumeralDecimalMark">ngxCleaveNumeralDecimalMark</a>
+                            </li>
+                            <li>
+                                <a href="#ngxCleaveNumeralDecimalScale">ngxCleaveNumeralDecimalScale</a>
+                            </li>
+                            <li>
+                                <a href="#ngxCleaveNumeralIntegerScale">ngxCleaveNumeralIntegerScale</a>
+                            </li>
+                            <li>
+                                <a href="#ngxCleaveNumeralPositiveOnly">ngxCleaveNumeralPositiveOnly</a>
+                            </li>
+                            <li>
+                                <a href="#ngxCleaveNumeralThousandsGroupStyle">ngxCleaveNumeralThousandsGroupStyle</a>
+                            </li>
+                            <li>
+                                <a href="#ngxCleaveNumericOnly">ngxCleaveNumericOnly</a>
+                            </li>
+                            <li>
+                                <a href="#ngxCleavePhoneRegionCode">ngxCleavePhoneRegionCode</a>
+                            </li>
+                            <li>
+                                <a href="#ngxCleavePrefix">ngxCleavePrefix</a>
+                            </li>
+                            <li>
+                                <a href="#ngxCleaveRawValueTrimPrefix">ngxCleaveRawValueTrimPrefix</a>
+                            </li>
+                            <li>
+                                <a href="#ngxCleaveSignBeforePrefix">ngxCleaveSignBeforePrefix</a>
+                            </li>
+                            <li>
+                                <a href="#ngxCleaveStripLeadingZeroes">ngxCleaveStripLeadingZeroes</a>
+                            </li>
+                            <li>
+                                <a href="#ngxCleaveTimeFormat">ngxCleaveTimeFormat</a>
+                            </li>
+                            <li>
+                                <a href="#ngxCleaveTimePattern">ngxCleaveTimePattern</a>
+                            </li>
+                            <li>
+                                <a href="#ngxCleaveUppercase">ngxCleaveUppercase</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Outputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#ngxCleaveCreditCardTypeChanged">ngxCleaveCreditCardTypeChanged</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>HostListeners</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#blur">blur</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <h6><b>Accessors</b></h6>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <ul class="index-list">
+                                <li>
+                                    <a href="#lowercase">lowercase</a>
+                                </li>
+                                <li>
+                                    <a href="#uppercase">uppercase</a>
+                                </li>
+                                <li>
+                                    <a href="#numericOnly">numericOnly</a>
+                                </li>
+                                <li>
+                                    <a href="#rawValueTrimPrefix">rawValueTrimPrefix</a>
+                                </li>
+                                <li>
+                                    <a href="#noImmediatePrefix">noImmediatePrefix</a>
+                                </li>
+                                <li>
+                                    <a href="#delimiterLazyShow">delimiterLazyShow</a>
+                                </li>
+                                <li>
+                                    <a href="#stripLeadingZeroes">stripLeadingZeroes</a>
+                                </li>
+                                <li>
+                                    <a href="#signBeforePrefix">signBeforePrefix</a>
+                                </li>
+                                <li>
+                                    <a href="#numeralPositiveOnly">numeralPositiveOnly</a>
+                                </li>
+                                <li>
+                                    <a href="#numeralDecimalScale">numeralDecimalScale</a>
+                                </li>
+                                <li>
+                                    <a href="#numeralIntegerScale">numeralIntegerScale</a>
+                                </li>
+                                <li>
+                                    <a href="#creditCardStrictMode">creditCardStrictMode</a>
+                                </li>
+                                <li>
+                                    <a href="#emitRawValue">emitRawValue</a>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+        </tbody>
+    </table>
+</section>
+
+
+            <section>
+    <h3 id="inputs">Inputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="ngxCleave"></a>
+                        <b>ngxCleave</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../miscellaneous/typealiases.html#CleaveMode" target="_self" >CleaveMode</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="82" class="link-to-prism">libs/ngx-cleave/src/lib/ngx-cleave.directive.ts:82</a></div>
+                            </td>
+                        </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>A mode of Cleave.js</p>
+</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="ngxCleaveBlocks"></a>
+                        <b>ngxCleaveBlocks</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>number[]</code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="139" class="link-to-prism">libs/ngx-cleave/src/lib/ngx-cleave.directive.ts:139</a></div>
+                            </td>
+                        </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>An Array value indicates the groups to format the input value. It will insert delimiters in between these groups.
+This option is ignored by creditCard, phone, date and numeral shortcuts mode.</p>
+</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="ngxCleaveCreditCardStrictMode"></a>
+                        <b>ngxCleaveCreditCardStrictMode</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="334" class="link-to-prism">libs/ngx-cleave/src/lib/ngx-cleave.directive.ts:334</a></div>
+                            </td>
+                        </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>A Boolean value indicates if enable credit card strict mode.
+Expand use of 19-digit PANs for supported credit card.</p>
+</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="ngxCleaveDateMax"></a>
+                        <b>ngxCleaveDateMax</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="106" class="link-to-prism">libs/ngx-cleave/src/lib/ngx-cleave.directive.ts:106</a></div>
+                            </td>
+                        </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>An date String value indicates the max date boundary.
+The date string format follows as ISO 8601 date format YYYY-MM-DD</p>
+</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="ngxCleaveDateMin"></a>
+                        <b>ngxCleaveDateMin</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="100" class="link-to-prism">libs/ngx-cleave/src/lib/ngx-cleave.directive.ts:100</a></div>
+                            </td>
+                        </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>An date String value indicates the min date boundary.
+The date string format follows as ISO 8601 date format YYYY-MM-DD</p>
+</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="ngxCleaveDatePattern"></a>
+                        <b>ngxCleaveDatePattern</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../miscellaneous/typealiases.html#DatePattern" target="_self" >DatePattern</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[&#x27;d&#x27;, &#x27;m&#x27;, &#x27;Y&#x27;]</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="94" class="link-to-prism">libs/ngx-cleave/src/lib/ngx-cleave.directive.ts:94</a></div>
+                            </td>
+                        </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>An Array value indicates the date pattern.
+Since it&#39;s an input field, leading 0 before date and month is required. To indicate what patterns it should apply, you can use: &#39;Y&#39;, &#39;y&#39;, &#39;m&#39; and &#39;d&#39;.</p>
+</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="ngxCleaveDelimiter"></a>
+                        <b>ngxCleaveDelimiter</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="144" class="link-to-prism">libs/ngx-cleave/src/lib/ngx-cleave.directive.ts:144</a></div>
+                            </td>
+                        </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>A String value indicates the delimiter to use in formatting.</p>
+</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="ngxCleaveDelimiterLazyShow"></a>
+                        <b>ngxCleaveDelimiterLazyShow</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="248" class="link-to-prism">libs/ngx-cleave/src/lib/ngx-cleave.directive.ts:248</a></div>
+                            </td>
+                        </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>A boolean value that if true, will lazy add the delimiter only when the user starting typing the next group section
+This option is ignored by phone, and numeral shortcuts mode.</p>
+</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="ngxCleaveDelimiters"></a>
+                        <b>ngxCleaveDelimiters</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>string[]</code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="151" class="link-to-prism">libs/ngx-cleave/src/lib/ngx-cleave.directive.ts:151</a></div>
+                            </td>
+                        </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>An Array value indicates the multiple delimiters to use in formatting.
+This option is ignored by creditCard, phone, date and numeral shortcuts mode.
+When delimiters array is defined, single delimiter option is ignored.</p>
+</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="ngxCleaveEmitRawValue"></a>
+                        <b>ngxCleaveEmitRawValue</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="345" class="link-to-prism">libs/ngx-cleave/src/lib/ngx-cleave.directive.ts:345</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="ngxCleaveLowercase"></a>
+                        <b>ngxCleaveLowercase</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="174" class="link-to-prism">libs/ngx-cleave/src/lib/ngx-cleave.directive.ts:174</a></div>
+                            </td>
+                        </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>A Boolean value indicates if it converts value to lowercase letters.
+lowercase doesn&#39;t work on it&#39;s own, you have to either specify the shortcuts mode or blocks option to enable the formatter.</p>
+</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="ngxCleaveNoImmediatePrefix"></a>
+                        <b>ngxCleaveNoImmediatePrefix</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="233" class="link-to-prism">libs/ngx-cleave/src/lib/ngx-cleave.directive.ts:233</a></div>
+                            </td>
+                        </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>A boolean value that if true, will only add the prefix once the user enters values. Useful if you need to use placeholders.</p>
+</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="ngxCleaveNumeralDecimalMark"></a>
+                        <b>ngxCleaveNumeralDecimalMark</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;.&#x27;</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="133" class="link-to-prism">libs/ngx-cleave/src/lib/ngx-cleave.directive.ts:133</a></div>
+                            </td>
+                        </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>A String value indicates the numeral decimal mark.
+Decimal mark can be different in handwriting, and for delimiter as well.</p>
+</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="ngxCleaveNumeralDecimalScale"></a>
+                        <b>ngxCleaveNumeralDecimalScale</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="305" class="link-to-prism">libs/ngx-cleave/src/lib/ngx-cleave.directive.ts:305</a></div>
+                            </td>
+                        </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>An Int value indicates the numeral integer scale.</p>
+</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="ngxCleaveNumeralIntegerScale"></a>
+                        <b>ngxCleaveNumeralIntegerScale</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="319" class="link-to-prism">libs/ngx-cleave/src/lib/ngx-cleave.directive.ts:319</a></div>
+                            </td>
+                        </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>An Int value indicates the numeral decimal scale.</p>
+</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="ngxCleaveNumeralPositiveOnly"></a>
+                        <b>ngxCleaveNumeralPositiveOnly</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="291" class="link-to-prism">libs/ngx-cleave/src/lib/ngx-cleave.directive.ts:291</a></div>
+                            </td>
+                        </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>A Boolean value indicates if it only allows positive numeral value</p>
+</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="ngxCleaveNumeralThousandsGroupStyle"></a>
+                        <b>ngxCleaveNumeralThousandsGroupStyle</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../miscellaneous/typealiases.html#NumeralThousandsGroupStyle" target="_self" >NumeralThousandsGroupStyle</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;thousand&#x27;</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="127" class="link-to-prism">libs/ngx-cleave/src/lib/ngx-cleave.directive.ts:127</a></div>
+                            </td>
+                        </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>A String value indicates the thousands separator grouping style.
+It accepts three preset value:</p>
+<ul>
+<li>thousand: Thousand numbering group style. It groups numbers in thousands and the delimiter occurs every 3 digits. 1,234,567.89</li>
+<li>lakh: Indian numbering group style. It groups the rightmost 3 digits in a similar manner to regular way but then groups every 2 digits thereafter. 12,34,567.89</li>
+<li>wan: Chinese numbering group style. It groups numbers in 10-thousand(万, 萬) and the delimiter occurs every 4 digits. 123,4567.89</li>
+<li>none: Does not group thousands. 1234567.89</li>
+</ul>
+</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="ngxCleaveNumericOnly"></a>
+                        <b>ngxCleaveNumericOnly</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="205" class="link-to-prism">libs/ngx-cleave/src/lib/ngx-cleave.directive.ts:205</a></div>
+                            </td>
+                        </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>A Boolean value indicates if it only allows numeric letters (0-9).
+Ignored by creditCard and date shortcuts mode, the value will always be true.
+numericOnly doesn&#39;t work on it&#39;s own, you have to either specify the shortcuts mode or blocks option to enable the formatter.</p>
+</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="ngxCleavePhoneRegionCode"></a>
+                        <b>ngxCleavePhoneRegionCode</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;AU&#x27;</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="88" class="link-to-prism">libs/ngx-cleave/src/lib/ngx-cleave.directive.ts:88</a></div>
+                            </td>
+                        </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>A String value indicates the country region code for phone number formatting.
+You can find your country code in <a href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements">ISO 3166-1 alpha-2</a> list.</p>
+</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="ngxCleavePrefix"></a>
+                        <b>ngxCleavePrefix</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="156" class="link-to-prism">libs/ngx-cleave/src/lib/ngx-cleave.directive.ts:156</a></div>
+                            </td>
+                        </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>A String value indicates the prepend string. It can&#39;t be removed or changed in the input field.</p>
+</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="ngxCleaveRawValueTrimPrefix"></a>
+                        <b>ngxCleaveRawValueTrimPrefix</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="219" class="link-to-prism">libs/ngx-cleave/src/lib/ngx-cleave.directive.ts:219</a></div>
+                            </td>
+                        </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>A Boolean value indicates if to trim prefix in calling getRawValue() or getting rawValue in AngularJS or ReactJS component.</p>
+</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="ngxCleaveSignBeforePrefix"></a>
+                        <b>ngxCleaveSignBeforePrefix</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="277" class="link-to-prism">libs/ngx-cleave/src/lib/ngx-cleave.directive.ts:277</a></div>
+                            </td>
+                        </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>A Boolean value indicates if the sign of the numeral should appear before the prefix.</p>
+</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="ngxCleaveStripLeadingZeroes"></a>
+                        <b>ngxCleaveStripLeadingZeroes</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="263" class="link-to-prism">libs/ngx-cleave/src/lib/ngx-cleave.directive.ts:263</a></div>
+                            </td>
+                        </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>A Boolean value indicates if zeroes appearing at the beginning of the number should be stripped out.
+This also prevents a number like &quot;100,000&quot; to disappear if the leading &quot;1&quot; is deleted.</p>
+</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="ngxCleaveTimeFormat"></a>
+                        <b>ngxCleaveTimeFormat</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../miscellaneous/typealiases.html#TimeFormat" target="_self" >TimeFormat</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;12&#x27;</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="117" class="link-to-prism">libs/ngx-cleave/src/lib/ngx-cleave.directive.ts:117</a></div>
+                            </td>
+                        </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>A String value indicates time format</p>
+</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="ngxCleaveTimePattern"></a>
+                        <b>ngxCleaveTimePattern</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../miscellaneous/typealiases.html#TimePattern" target="_self" >TimePattern</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[&#x27;h&#x27;, &#x27;m&#x27;, &#x27;s&#x27;]</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="112" class="link-to-prism">libs/ngx-cleave/src/lib/ngx-cleave.directive.ts:112</a></div>
+                            </td>
+                        </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>An Array value indicates the time pattern.
+Since it&#39;s an input field, leading 0 before hour, minute and second is required. To indicate what patterns it should apply, you can use: &#39;h&#39;, &#39;m&#39; and &#39;s&#39;.</p>
+</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="ngxCleaveUppercase"></a>
+                        <b>ngxCleaveUppercase</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="189" class="link-to-prism">libs/ngx-cleave/src/lib/ngx-cleave.directive.ts:189</a></div>
+                            </td>
+                        </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>A Boolean value indicates if it converts value to uppercase letters.
+uppercase doesn&#39;t work on it&#39;s own, you have to either specify the shortcuts mode or blocks option to enable the formatter.</p>
+</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+            <section>
+    <h3 id="outputs">Outputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="ngxCleaveCreditCardTypeChanged"></a>
+                        <b>ngxCleaveCreditCardTypeChanged</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://angular.io/api/core/EventEmitter" target="_blank" >EventEmitter</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="77" class="link-to-prism">libs/ngx-cleave/src/lib/ngx-cleave.directive.ts:77</a></div>
+                            </td>
+                        </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Triggered after credit card type changes.
+The unique argument type is the type of the detected credit</p>
+</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+            <section>
+    <h3>HostListeners</h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="blur"></a>
+                    <span class="name">
+                        <b>
+                            blur
+                        </b>
+                        <a href="#blur"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>blur()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="358"
+                            class="link-to-prism">libs/ngx-cleave/src/lib/ngx-cleave.directive.ts:358</a></div>
+                </td>
+            </tr>
+
+
+        </tbody>
+    </table>
+</section>
+            <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="registerOnChange"></a>
+                    <span class="name">
+                        <b>
+                            registerOnChange
+                        </b>
+                        <a href="#registerOnChange"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>registerOnChange(fn: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="372"
+                            class="link-to-prism">libs/ngx-cleave/src/lib/ngx-cleave.directive.ts:372</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>fn</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="registerOnTouched"></a>
+                    <span class="name">
+                        <b>
+                            registerOnTouched
+                        </b>
+                        <a href="#registerOnTouched"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>registerOnTouched(fn: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="376"
+                            class="link-to-prism">libs/ngx-cleave/src/lib/ngx-cleave.directive.ts:376</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>fn</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="setDisabledState"></a>
+                    <span class="name">
+                        <b>
+                            setDisabledState
+                        </b>
+                        <a href="#setDisabledState"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>setDisabledState(isDisabled: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank">boolean</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="380"
+                            class="link-to-prism">libs/ngx-cleave/src/lib/ngx-cleave.directive.ts:380</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>isDisabled</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="writeValue"></a>
+                    <span class="name">
+                        <b>
+                            writeValue
+                        </b>
+                        <a href="#writeValue"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>writeValue(obj: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="388"
+                            class="link-to-prism">libs/ngx-cleave/src/lib/ngx-cleave.directive.ts:388</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>obj</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+            <section>
+    <h3 id="accessors">
+        Accessors
+    </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="lowercase"></a>
+                        <span class="name"><b>lowercase</b><a href="#lowercase"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>set</b><code>lowercase(value: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank">boolean</a>)</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="178" class="link-to-prism">libs/ngx-cleave/src/lib/ngx-cleave.directive.ts:178</a></div>
+                                </td>
+                            </tr>
+                    <tr>
+                        <td class="col-md-4">
+
+                                <div class="io-description">
+                                        <b>Parameters :</b>
+                                        <table class="params">
+                                            <thead>
+                                                <tr>
+                                                    <td>Name</td>
+                                                        <td>Type</td>
+                                                    <td>Optional</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                    <tr>
+                                                            <td>value</td>
+                                                    
+                                                            <td>
+                                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+                                                            </td>
+                                                    
+                                                        <td>
+                                                                No
+                                                        </td>
+                                                        
+                                                    </tr>
+                                            </tbody>
+                                        </table>
+                                </div>
+                                <div>
+                                </div>
+                                <div class="io-description">
+                                    <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                                </div>
+                        </td>
+                    </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="uppercase"></a>
+                        <span class="name"><b>uppercase</b><a href="#uppercase"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>set</b><code>uppercase(value: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank">boolean</a>)</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="193" class="link-to-prism">libs/ngx-cleave/src/lib/ngx-cleave.directive.ts:193</a></div>
+                                </td>
+                            </tr>
+                    <tr>
+                        <td class="col-md-4">
+
+                                <div class="io-description">
+                                        <b>Parameters :</b>
+                                        <table class="params">
+                                            <thead>
+                                                <tr>
+                                                    <td>Name</td>
+                                                        <td>Type</td>
+                                                    <td>Optional</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                    <tr>
+                                                            <td>value</td>
+                                                    
+                                                            <td>
+                                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+                                                            </td>
+                                                    
+                                                        <td>
+                                                                No
+                                                        </td>
+                                                        
+                                                    </tr>
+                                            </tbody>
+                                        </table>
+                                </div>
+                                <div>
+                                </div>
+                                <div class="io-description">
+                                    <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                                </div>
+                        </td>
+                    </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="numericOnly"></a>
+                        <span class="name"><b>numericOnly</b><a href="#numericOnly"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>set</b><code>numericOnly(value: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank">boolean</a>)</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="209" class="link-to-prism">libs/ngx-cleave/src/lib/ngx-cleave.directive.ts:209</a></div>
+                                </td>
+                            </tr>
+                    <tr>
+                        <td class="col-md-4">
+
+                                <div class="io-description">
+                                        <b>Parameters :</b>
+                                        <table class="params">
+                                            <thead>
+                                                <tr>
+                                                    <td>Name</td>
+                                                        <td>Type</td>
+                                                    <td>Optional</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                    <tr>
+                                                            <td>value</td>
+                                                    
+                                                            <td>
+                                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+                                                            </td>
+                                                    
+                                                        <td>
+                                                                No
+                                                        </td>
+                                                        
+                                                    </tr>
+                                            </tbody>
+                                        </table>
+                                </div>
+                                <div>
+                                </div>
+                                <div class="io-description">
+                                    <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                                </div>
+                        </td>
+                    </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="rawValueTrimPrefix"></a>
+                        <span class="name"><b>rawValueTrimPrefix</b><a href="#rawValueTrimPrefix"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>set</b><code>rawValueTrimPrefix(value: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank">boolean</a>)</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="223" class="link-to-prism">libs/ngx-cleave/src/lib/ngx-cleave.directive.ts:223</a></div>
+                                </td>
+                            </tr>
+                    <tr>
+                        <td class="col-md-4">
+
+                                <div class="io-description">
+                                        <b>Parameters :</b>
+                                        <table class="params">
+                                            <thead>
+                                                <tr>
+                                                    <td>Name</td>
+                                                        <td>Type</td>
+                                                    <td>Optional</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                    <tr>
+                                                            <td>value</td>
+                                                    
+                                                            <td>
+                                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+                                                            </td>
+                                                    
+                                                        <td>
+                                                                No
+                                                        </td>
+                                                        
+                                                    </tr>
+                                            </tbody>
+                                        </table>
+                                </div>
+                                <div>
+                                </div>
+                                <div class="io-description">
+                                    <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                                </div>
+                        </td>
+                    </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="noImmediatePrefix"></a>
+                        <span class="name"><b>noImmediatePrefix</b><a href="#noImmediatePrefix"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>set</b><code>noImmediatePrefix(value: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank">boolean</a>)</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="237" class="link-to-prism">libs/ngx-cleave/src/lib/ngx-cleave.directive.ts:237</a></div>
+                                </td>
+                            </tr>
+                    <tr>
+                        <td class="col-md-4">
+
+                                <div class="io-description">
+                                        <b>Parameters :</b>
+                                        <table class="params">
+                                            <thead>
+                                                <tr>
+                                                    <td>Name</td>
+                                                        <td>Type</td>
+                                                    <td>Optional</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                    <tr>
+                                                            <td>value</td>
+                                                    
+                                                            <td>
+                                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+                                                            </td>
+                                                    
+                                                        <td>
+                                                                No
+                                                        </td>
+                                                        
+                                                    </tr>
+                                            </tbody>
+                                        </table>
+                                </div>
+                                <div>
+                                </div>
+                                <div class="io-description">
+                                    <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                                </div>
+                        </td>
+                    </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="delimiterLazyShow"></a>
+                        <span class="name"><b>delimiterLazyShow</b><a href="#delimiterLazyShow"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>set</b><code>delimiterLazyShow(value: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank">boolean</a>)</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="252" class="link-to-prism">libs/ngx-cleave/src/lib/ngx-cleave.directive.ts:252</a></div>
+                                </td>
+                            </tr>
+                    <tr>
+                        <td class="col-md-4">
+
+                                <div class="io-description">
+                                        <b>Parameters :</b>
+                                        <table class="params">
+                                            <thead>
+                                                <tr>
+                                                    <td>Name</td>
+                                                        <td>Type</td>
+                                                    <td>Optional</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                    <tr>
+                                                            <td>value</td>
+                                                    
+                                                            <td>
+                                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+                                                            </td>
+                                                    
+                                                        <td>
+                                                                No
+                                                        </td>
+                                                        
+                                                    </tr>
+                                            </tbody>
+                                        </table>
+                                </div>
+                                <div>
+                                </div>
+                                <div class="io-description">
+                                    <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                                </div>
+                        </td>
+                    </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="stripLeadingZeroes"></a>
+                        <span class="name"><b>stripLeadingZeroes</b><a href="#stripLeadingZeroes"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>set</b><code>stripLeadingZeroes(value: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank">boolean</a>)</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="267" class="link-to-prism">libs/ngx-cleave/src/lib/ngx-cleave.directive.ts:267</a></div>
+                                </td>
+                            </tr>
+                    <tr>
+                        <td class="col-md-4">
+
+                                <div class="io-description">
+                                        <b>Parameters :</b>
+                                        <table class="params">
+                                            <thead>
+                                                <tr>
+                                                    <td>Name</td>
+                                                        <td>Type</td>
+                                                    <td>Optional</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                    <tr>
+                                                            <td>value</td>
+                                                    
+                                                            <td>
+                                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+                                                            </td>
+                                                    
+                                                        <td>
+                                                                No
+                                                        </td>
+                                                        
+                                                    </tr>
+                                            </tbody>
+                                        </table>
+                                </div>
+                                <div>
+                                </div>
+                                <div class="io-description">
+                                    <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                                </div>
+                        </td>
+                    </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="signBeforePrefix"></a>
+                        <span class="name"><b>signBeforePrefix</b><a href="#signBeforePrefix"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>set</b><code>signBeforePrefix(value: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank">boolean</a>)</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="281" class="link-to-prism">libs/ngx-cleave/src/lib/ngx-cleave.directive.ts:281</a></div>
+                                </td>
+                            </tr>
+                    <tr>
+                        <td class="col-md-4">
+
+                                <div class="io-description">
+                                        <b>Parameters :</b>
+                                        <table class="params">
+                                            <thead>
+                                                <tr>
+                                                    <td>Name</td>
+                                                        <td>Type</td>
+                                                    <td>Optional</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                    <tr>
+                                                            <td>value</td>
+                                                    
+                                                            <td>
+                                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+                                                            </td>
+                                                    
+                                                        <td>
+                                                                No
+                                                        </td>
+                                                        
+                                                    </tr>
+                                            </tbody>
+                                        </table>
+                                </div>
+                                <div>
+                                </div>
+                                <div class="io-description">
+                                    <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                                </div>
+                        </td>
+                    </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="numeralPositiveOnly"></a>
+                        <span class="name"><b>numeralPositiveOnly</b><a href="#numeralPositiveOnly"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>set</b><code>numeralPositiveOnly(value: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank">boolean</a>)</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="295" class="link-to-prism">libs/ngx-cleave/src/lib/ngx-cleave.directive.ts:295</a></div>
+                                </td>
+                            </tr>
+                    <tr>
+                        <td class="col-md-4">
+
+                                <div class="io-description">
+                                        <b>Parameters :</b>
+                                        <table class="params">
+                                            <thead>
+                                                <tr>
+                                                    <td>Name</td>
+                                                        <td>Type</td>
+                                                    <td>Optional</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                    <tr>
+                                                            <td>value</td>
+                                                    
+                                                            <td>
+                                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+                                                            </td>
+                                                    
+                                                        <td>
+                                                                No
+                                                        </td>
+                                                        
+                                                    </tr>
+                                            </tbody>
+                                        </table>
+                                </div>
+                                <div>
+                                </div>
+                                <div class="io-description">
+                                    <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                                </div>
+                        </td>
+                    </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="numeralDecimalScale"></a>
+                        <span class="name"><b>numeralDecimalScale</b><a href="#numeralDecimalScale"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>set</b><code>numeralDecimalScale(value: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="309" class="link-to-prism">libs/ngx-cleave/src/lib/ngx-cleave.directive.ts:309</a></div>
+                                </td>
+                            </tr>
+                    <tr>
+                        <td class="col-md-4">
+
+                                <div class="io-description">
+                                        <b>Parameters :</b>
+                                        <table class="params">
+                                            <thead>
+                                                <tr>
+                                                    <td>Name</td>
+                                                        <td>Type</td>
+                                                    <td>Optional</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                    <tr>
+                                                            <td>value</td>
+                                                    
+                                                            <td>
+                                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                                            </td>
+                                                    
+                                                        <td>
+                                                                No
+                                                        </td>
+                                                        
+                                                    </tr>
+                                            </tbody>
+                                        </table>
+                                </div>
+                                <div>
+                                </div>
+                                <div class="io-description">
+                                    <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                                </div>
+                        </td>
+                    </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="numeralIntegerScale"></a>
+                        <span class="name"><b>numeralIntegerScale</b><a href="#numeralIntegerScale"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>set</b><code>numeralIntegerScale(value: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="323" class="link-to-prism">libs/ngx-cleave/src/lib/ngx-cleave.directive.ts:323</a></div>
+                                </td>
+                            </tr>
+                    <tr>
+                        <td class="col-md-4">
+
+                                <div class="io-description">
+                                        <b>Parameters :</b>
+                                        <table class="params">
+                                            <thead>
+                                                <tr>
+                                                    <td>Name</td>
+                                                        <td>Type</td>
+                                                    <td>Optional</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                    <tr>
+                                                            <td>value</td>
+                                                    
+                                                            <td>
+                                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                                            </td>
+                                                    
+                                                        <td>
+                                                                No
+                                                        </td>
+                                                        
+                                                    </tr>
+                                            </tbody>
+                                        </table>
+                                </div>
+                                <div>
+                                </div>
+                                <div class="io-description">
+                                    <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                                </div>
+                        </td>
+                    </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="creditCardStrictMode"></a>
+                        <span class="name"><b>creditCardStrictMode</b><a href="#creditCardStrictMode"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>set</b><code>creditCardStrictMode(value: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank">boolean</a>)</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="338" class="link-to-prism">libs/ngx-cleave/src/lib/ngx-cleave.directive.ts:338</a></div>
+                                </td>
+                            </tr>
+                    <tr>
+                        <td class="col-md-4">
+
+                                <div class="io-description">
+                                        <b>Parameters :</b>
+                                        <table class="params">
+                                            <thead>
+                                                <tr>
+                                                    <td>Name</td>
+                                                        <td>Type</td>
+                                                    <td>Optional</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                    <tr>
+                                                            <td>value</td>
+                                                    
+                                                            <td>
+                                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+                                                            </td>
+                                                    
+                                                        <td>
+                                                                No
+                                                        </td>
+                                                        
+                                                    </tr>
+                                            </tbody>
+                                        </table>
+                                </div>
+                                <div>
+                                </div>
+                                <div class="io-description">
+                                    <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                                </div>
+                        </td>
+                    </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="emitRawValue"></a>
+                        <span class="name"><b>emitRawValue</b><a href="#emitRawValue"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>set</b><code>emitRawValue(value: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank">boolean</a>)</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="349" class="link-to-prism">libs/ngx-cleave/src/lib/ngx-cleave.directive.ts:349</a></div>
+                                </td>
+                            </tr>
+                    <tr>
+                        <td class="col-md-4">
+
+                                <div class="io-description">
+                                        <b>Parameters :</b>
+                                        <table class="params">
+                                            <thead>
+                                                <tr>
+                                                    <td>Name</td>
+                                                        <td>Type</td>
+                                                    <td>Optional</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                    <tr>
+                                                            <td>value</td>
+                                                    
+                                                            <td>
+                                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+                                                            </td>
+                                                    
+                                                        <td>
+                                                                No
+                                                        </td>
+                                                        
+                                                    </tr>
+                                            </tbody>
+                                        </table>
+                                </div>
+                                <div>
+                                </div>
+                                <div class="io-description">
+                                    <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                                </div>
+                        </td>
+                    </tr>
+            </tbody>
+        </table>
+</section>
+
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {
+  Directive,
+  ElementRef,
+  EventEmitter,
+  forwardRef,
+  HostListener,
+  Inject,
+  Input,
+  OnChanges,
+  OnDestroy,
+  OnInit,
+  Output,
+  PLATFORM_ID,
+  Renderer2,
+  SimpleChanges
+} from &#x27;@angular/core&#x27;;
+import { ControlValueAccessor, NG_VALUE_ACCESSOR } from &#x27;@angular/forms&#x27;;
+import { isPlatformBrowser } from &#x27;@angular/common&#x27;;
+import * as Cleave from &#x27;cleave.js/dist/cleave.js&#x27;;
+
+/**
+ * Forced casting to boolean type
+ * @param value
+ */
+export function coerceBooleanProperty(value: any): boolean {
+  return value !&#x3D; null &amp;&amp; &#x60;${value}&#x60; !&#x3D;&#x3D; &#x27;false&#x27;;
+}
+
+/**
+ * Forced casting to number type
+ * @param value
+ * @param fallbackValue
+ */
+export function coerceNumberProperty(value: any, fallbackValue &#x3D; 0) {
+  return _isNumberValue(value) ? Number(value) : fallbackValue;
+}
+
+/**
+ *
+ * @internal
+ */
+export function _isNumberValue(value: any): boolean {
+  return !isNaN(parseFloat(value as any)) &amp;&amp; !isNaN(Number(value));
+}
+
+export type CleaveMode &#x3D; &#x27;creditCard&#x27; | &#x27;phone&#x27; | &#x27;date&#x27; | &#x27;time&#x27; | &#x27;numeral&#x27;;
+export type CreditCardTypes &#x3D;
+  &#x27;amex&#x27;
+  | &#x27;mastercard&#x27;
+  | &#x27;visa&#x27;
+  | &#x27;diners&#x27;
+  | &#x27;discover&#x27;
+  | &#x27;jcb&#x27;
+  | &#x27;dankort&#x27;
+  | &#x27;instapayment&#x27;
+  | &#x27;uatp&#x27;
+  | &#x27;mir&#x27;
+  | &#x27;unionPay&#x27;
+  | &#x27;unknown&#x27;;
+
+export type DatePattern &#x3D; Array&lt;&#x27;Y&#x27; | &#x27;y&#x27; | &#x27;m&#x27; | &#x27;d&#x27;&gt;;
+export type TimePattern &#x3D; Array&lt;&#x27;h&#x27; | &#x27;m&#x27; | &#x27;s&#x27;&gt;;
+export type TimeFormat &#x3D; &#x27;12&#x27; | &#x27;24&#x27;;
+export type NumeralThousandsGroupStyle &#x3D; &#x27;thousand&#x27; | &#x27;lakh&#x27; | &#x27;wan&#x27; | &#x27;none&#x27;;
+
+@Directive({
+  selector: &#x27;input[ngxCleave],textarea[ngxCleave]&#x27;,
+  providers: [{ provide: NG_VALUE_ACCESSOR, useExisting: forwardRef(() &#x3D;&gt; NgxCleaveDirective), multi: true }],
+  exportAs: &#x27;ngxCleave&#x27;
+})
+export class NgxCleaveDirective implements OnInit, OnDestroy, ControlValueAccessor, OnChanges {
+  private static ignoredProperties &#x3D; [&#x27;emitRawValue&#x27;];
+  /**
+   * Triggered after credit card type changes.
+   * The unique argument type is the type of the detected credit
+   */
+  @Output(&#x27;ngxCleaveCreditCardTypeChanged&#x27;) creditCardTypeChanged &#x3D; new EventEmitter&lt;CreditCardTypes&gt;();
+
+  /**
+   * A mode of Cleave.js
+   */
+  @Input(&#x27;ngxCleave&#x27;) public mode: CleaveMode;
+
+  /**
+   * A String value indicates the country region code for phone number formatting.
+   * You can find your country code in [ISO 3166-1 alpha-2]{@link https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements} list.
+   */
+  @Input(&#x27;ngxCleavePhoneRegionCode&#x27;) phoneRegionCode &#x3D; &#x27;AU&#x27;;
+
+  /**
+   * An Array value indicates the date pattern.
+   * Since it&#x27;s an input field, leading 0 before date and month is required. To indicate what patterns it should apply, you can use: &#x27;Y&#x27;, &#x27;y&#x27;, &#x27;m&#x27; and &#x27;d&#x27;.
+   */
+  @Input(&#x27;ngxCleaveDatePattern&#x27;) datePattern: DatePattern &#x3D; [&#x27;d&#x27;, &#x27;m&#x27;, &#x27;Y&#x27;];
+
+  /**
+   * An date String value indicates the min date boundary.
+   * The date string format follows as ISO 8601 date format YYYY-MM-DD
+   */
+  @Input(&#x27;ngxCleaveDateMin&#x27;) dateMin: string;
+
+  /**
+   * An date String value indicates the max date boundary.
+   * The date string format follows as ISO 8601 date format YYYY-MM-DD
+   */
+  @Input(&#x27;ngxCleaveDateMax&#x27;) dateMax: string;
+
+  /**
+   * An Array value indicates the time pattern.
+   * Since it&#x27;s an input field, leading 0 before hour, minute and second is required. To indicate what patterns it should apply, you can use: &#x27;h&#x27;, &#x27;m&#x27; and &#x27;s&#x27;.
+   */
+  @Input(&#x27;ngxCleaveTimePattern&#x27;) timePattern: TimePattern &#x3D; [&#x27;h&#x27;, &#x27;m&#x27;, &#x27;s&#x27;];
+
+  /**
+   * A String value indicates time format
+   */
+  @Input(&#x27;ngxCleaveTimeFormat&#x27;) timeFormat: TimeFormat &#x3D; &#x27;12&#x27;;
+
+  /**
+   * A String value indicates the thousands separator grouping style.
+   * It accepts three preset value:
+   * - thousand: Thousand numbering group style. It groups numbers in thousands and the delimiter occurs every 3 digits. 1,234,567.89
+   * - lakh: Indian numbering group style. It groups the rightmost 3 digits in a similar manner to regular way but then groups every 2 digits thereafter. 12,34,567.89
+   * - wan: Chinese numbering group style. It groups numbers in 10-thousand(万, 萬) and the delimiter occurs every 4 digits. 123,4567.89
+   * - none: Does not group thousands. 1234567.89
+   */
+  @Input(&#x27;ngxCleaveNumeralThousandsGroupStyle&#x27;) numeralThousandsGroupStyle: NumeralThousandsGroupStyle &#x3D; &#x27;thousand&#x27;;
+
+  /**
+   * A String value indicates the numeral decimal mark.
+   * Decimal mark can be different in handwriting, and for delimiter as well.
+   */
+  @Input(&#x27;ngxCleaveNumeralDecimalMark&#x27;) numeralDecimalMark &#x3D; &#x27;.&#x27;;
+
+  /**
+   * An Array value indicates the groups to format the input value. It will insert delimiters in between these groups.
+   * This option is ignored by creditCard, phone, date and numeral shortcuts mode.
+   */
+  @Input(&#x27;ngxCleaveBlocks&#x27;) blocks: number[];
+
+  /**
+   * A String value indicates the delimiter to use in formatting.
+   */
+  @Input(&#x27;ngxCleaveDelimiter&#x27;) delimiter: string;
+
+  /**
+   * An Array value indicates the multiple delimiters to use in formatting.
+   * This option is ignored by creditCard, phone, date and numeral shortcuts mode.
+   * When delimiters array is defined, single delimiter option is ignored.
+   */
+  @Input(&#x27;ngxCleaveDelimiters&#x27;) delimiters: string[];
+
+  /**
+   * A String value indicates the prepend string. It can&#x27;t be removed or changed in the input field.
+   */
+  @Input(&#x27;ngxCleavePrefix&#x27;) prefix: string;
+  private cleave: Cleave;
+
+  /**
+   * @internal
+   */
+  constructor(private elementRef: ElementRef&lt;HTMLInputElement&gt;,
+              @Inject(PLATFORM_ID) private platformId,
+              private renderer: Renderer2) {
+  }
+
+  private _lowercase &#x3D; false;
+
+  /**
+   * A Boolean value indicates if it converts value to lowercase letters.
+   * lowercase doesn&#x27;t work on it&#x27;s own, you have to either specify the shortcuts mode or blocks option to enable the formatter.
+   */
+  @Input(&#x27;ngxCleaveLowercase&#x27;)
+  get lowercase(): boolean {
+    return this._lowercase;
+  }
+
+  set lowercase(value: boolean) {
+    this._lowercase &#x3D; value;
+  }
+
+  private _uppercase &#x3D; false;
+
+  /**
+   * A Boolean value indicates if it converts value to uppercase letters.
+   * uppercase doesn&#x27;t work on it&#x27;s own, you have to either specify the shortcuts mode or blocks option to enable the formatter.
+   */
+  @Input(&#x27;ngxCleaveUppercase&#x27;)
+  get uppercase(): boolean {
+    return this._uppercase;
+  }
+
+  set uppercase(value: boolean) {
+    this._uppercase &#x3D; value;
+  }
+
+  private _numericOnly &#x3D; false;
+
+  /**
+   * A Boolean value indicates if it only allows numeric letters (0-9).
+   * Ignored by creditCard and date shortcuts mode, the value will always be true.
+   * numericOnly doesn&#x27;t work on it&#x27;s own, you have to either specify the shortcuts mode or blocks option to enable the formatter.
+   */
+  @Input(&#x27;ngxCleaveNumericOnly&#x27;)
+  get numericOnly(): boolean {
+    return this._numericOnly;
+  }
+
+  set numericOnly(value: boolean) {
+    this._numericOnly &#x3D; value;
+  }
+
+  private _rawValueTrimPrefix &#x3D; false;
+
+  /**
+   * A Boolean value indicates if to trim prefix in calling getRawValue() or getting rawValue in AngularJS or ReactJS component.
+   */
+  @Input(&#x27;ngxCleaveRawValueTrimPrefix&#x27;)
+  get rawValueTrimPrefix(): boolean {
+    return this._rawValueTrimPrefix;
+  }
+
+  set rawValueTrimPrefix(value: boolean) {
+    this._rawValueTrimPrefix &#x3D; coerceBooleanProperty(value);
+  }
+
+  private _noImmediatePrefix &#x3D; false;
+
+  /**
+   * A boolean value that if true, will only add the prefix once the user enters values. Useful if you need to use placeholders.
+   */
+  @Input(&#x27;ngxCleaveNoImmediatePrefix&#x27;)
+  get noImmediatePrefix(): boolean {
+    return this._noImmediatePrefix;
+  }
+
+  set noImmediatePrefix(value: boolean) {
+    this._noImmediatePrefix &#x3D; coerceBooleanProperty(value);
+  }
+
+  private _delimiterLazyShow &#x3D; false;
+
+  /**
+   * A boolean value that if true, will lazy add the delimiter only when the user starting typing the next group section
+   * This option is ignored by phone, and numeral shortcuts mode.
+   */
+  @Input(&#x27;ngxCleaveDelimiterLazyShow&#x27;)
+  get delimiterLazyShow(): boolean {
+    return this._delimiterLazyShow;
+  }
+
+  set delimiterLazyShow(value: boolean) {
+    this._delimiterLazyShow &#x3D; coerceBooleanProperty(value);
+  }
+
+  private _stripLeadingZeroes &#x3D; true;
+
+  /**
+   * A Boolean value indicates if zeroes appearing at the beginning of the number should be stripped out.
+   * This also prevents a number like &quot;100,000&quot; to disappear if the leading &quot;1&quot; is deleted.
+   */
+  @Input(&#x27;ngxCleaveStripLeadingZeroes&#x27;)
+  get stripLeadingZeroes(): boolean {
+    return this._stripLeadingZeroes;
+  }
+
+  set stripLeadingZeroes(value: boolean) {
+    this._stripLeadingZeroes &#x3D; coerceBooleanProperty(value);
+  }
+
+  private _signBeforePrefix &#x3D; false;
+
+  /**
+   * A Boolean value indicates if the sign of the numeral should appear before the prefix.
+   */
+  @Input(&#x27;ngxCleaveSignBeforePrefix&#x27;)
+  get signBeforePrefix(): boolean {
+    return this._signBeforePrefix;
+  }
+
+  set signBeforePrefix(value: boolean) {
+    this._signBeforePrefix &#x3D; coerceBooleanProperty(value);
+  }
+
+  private _numeralPositiveOnly &#x3D; false;
+
+  /**
+   * A Boolean value indicates if it only allows positive numeral value
+   */
+  @Input(&#x27;ngxCleaveNumeralPositiveOnly&#x27;)
+  get numeralPositiveOnly(): boolean {
+    return this._numeralPositiveOnly;
+  }
+
+  set numeralPositiveOnly(value: boolean) {
+    this._numeralPositiveOnly &#x3D; coerceBooleanProperty(value);
+  }
+
+  private _numeralDecimalScale &#x3D; 2;
+
+  /**
+   * An Int value indicates the numeral integer scale.
+   */
+  @Input(&#x27;ngxCleaveNumeralDecimalScale&#x27;)
+  get numeralDecimalScale(): number {
+    return this._numeralDecimalScale;
+  }
+
+  set numeralDecimalScale(value: number) {
+    this._numeralDecimalScale &#x3D; coerceNumberProperty(value, 2);
+  }
+
+  private _numeralIntegerScale;
+
+  /**
+   * An Int value indicates the numeral decimal scale.
+   */
+  @Input(&#x27;ngxCleaveNumeralIntegerScale&#x27;)
+  get numeralIntegerScale(): number {
+    return this._numeralIntegerScale;
+  }
+
+  set numeralIntegerScale(value: number) {
+    this._numeralIntegerScale &#x3D; coerceNumberProperty(value, undefined);
+  }
+
+  private _creditCardStrictMode &#x3D; false;
+
+  /**
+   * A Boolean value indicates if enable credit card strict mode.
+   * Expand use of 19-digit PANs for supported credit card.
+   */
+  @Input(&#x27;ngxCleaveCreditCardStrictMode&#x27;)
+  get creditCardStrictMode(): boolean {
+    return this._creditCardStrictMode;
+  }
+
+  set creditCardStrictMode(value: boolean) {
+    this._creditCardStrictMode &#x3D; coerceBooleanProperty(value);
+  }
+
+  private _emitRawValue &#x3D; false;
+
+  @Input(&#x27;ngxCleaveEmitRawValue&#x27;)
+  get emitRawValue(): boolean {
+    return this._emitRawValue;
+  }
+
+  set emitRawValue(value: boolean) {
+    this._emitRawValue &#x3D; coerceBooleanProperty(value);
+  }
+
+  private get isBrowser() {
+    return isPlatformBrowser(this.platformId);
+  }
+
+  @HostListener(&#x27;blur&#x27;)
+  public onBlur() {
+    this.touch();
+  }
+
+  ngOnDestroy(): void {
+    if (this.cleave) {
+      this.cleave.destroy();
+    }
+  }
+
+  ngOnInit(): void {
+    this.createCleaveInstance();
+  }
+
+  registerOnChange(fn: any): void {
+    this.change &#x3D; fn;
+  }
+
+  registerOnTouched(fn: any): void {
+    this.touch &#x3D; fn;
+  }
+
+  setDisabledState(isDisabled: boolean): void {
+    if (isDisabled) {
+      this.renderer.setAttribute(this.elementRef.nativeElement, &#x27;disabled&#x27;, &#x27;disabled&#x27;);
+    } else {
+      this.renderer.removeAttribute(this.elementRef.nativeElement, &#x27;disabled&#x27;);
+    }
+  }
+
+  writeValue(obj: any): void {
+    if (this.isBrowser) {
+      this.cleave.setRawValue(obj);
+    } else {
+      this.renderer.setValue(this.elementRef.nativeElement, obj);
+    }
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    const changedProperties &#x3D; Object.keys(changes).filter(name &#x3D;&gt; !NgxCleaveDirective.ignoredProperties.includes(name));
+
+    if (changedProperties.length &amp;&amp; !Object.values(changes).every(event &#x3D;&gt; event.firstChange)) {
+      this.createCleaveInstance();
+    }
+  }
+
+  private createCleaveInstance() {
+    if (this.cleave) {
+      this.cleave.destroy();
+    }
+
+    if (this.isBrowser) {
+      this.cleave &#x3D; new Cleave(this.elementRef.nativeElement, {
+        ...this.getCleaveConfig(),
+        onValueChanged: ({ target: { rawValue, value } }): void &#x3D;&gt; {
+          this.change(this.emitRawValue ? rawValue : value);
+        }
+      });
+    }
+  }
+
+  private getCleaveConfig() {
+    let config &#x3D; {};
+
+    switch (this.mode) {
+      case &#x27;creditCard&#x27;:
+        config &#x3D; {
+          ...config,
+          creditCard: true,
+          creditCardStrictMode: this.creditCardStrictMode,
+          onCreditCardTypeChanged: (type: CreditCardTypes) &#x3D;&gt; this.creditCardTypeChanged.emit(type)
+        };
+        break;
+      case &#x27;phone&#x27;:
+        config &#x3D; {
+          ...config,
+          phone: true,
+          phoneRegionCode: this.phoneRegionCode
+        };
+        break;
+      case &#x27;date&#x27;:
+        config &#x3D; {
+          ...config,
+          date: true,
+          datePattern: this.datePattern,
+          dateMin: this.dateMin,
+          dateMax: this.dateMax
+        };
+        break;
+      case &#x27;time&#x27;:
+        config &#x3D; {
+          ...config,
+          time: true,
+          timeFormat: this.timeFormat,
+          timePattern: this.timePattern
+        };
+        break;
+      case &#x27;numeral&#x27;:
+        config &#x3D; {
+          ...config,
+          numeral: true,
+          numeralThousandsGroupStyle: this.numeralThousandsGroupStyle,
+          numeralIntegerScale: this.numeralIntegerScale,
+          numeralDecimalScale: this.numeralDecimalScale,
+          numeralDecimalMark: this.numeralDecimalMark,
+          numeralPositiveOnly: this.numeralPositiveOnly,
+          signBeforePrefix: this.signBeforePrefix,
+          stripLeadingZeroes: this.stripLeadingZeroes
+        };
+        break;
+    }
+
+    config &#x3D; {
+      ...config,
+      blocks: this.blocks,
+      delimiter: this.delimiter,
+      delimiters: this.delimiters,
+      delimiterLazyShow: this.delimiterLazyShow,
+      prefix: this.prefix,
+      noImmediatePrefix: this.noImmediatePrefix,
+      rawValueTrimPrefix: this.rawValueTrimPrefix,
+      numericOnly: this.numericOnly,
+      uppercase: this.uppercase,
+      lowercase: this.lowercase
+    };
+
+    return config;
+  }
+
+  private touch &#x3D; () &#x3D;&gt; {
+  };
+
+  private change &#x3D; (_: any) &#x3D;&gt; {
+  };
+}
+</code></pre>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+                   
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'directive';
+            var COMPODOC_CURRENT_PAGE_URL = 'NgxCleaveDirective.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
