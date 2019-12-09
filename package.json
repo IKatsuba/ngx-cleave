@@ -12,7 +12,7 @@
     "affected:libs": "nx affected:libs",
     "affected:lint": "nx affected:lint",
     "affected:test": "nx affected:test",
-    "build": "ng build",
+    "build": "ng build ngx-cleave",
     "dep-graph": "nx dep-graph",
     "docs": "compodoc ./libs/ngx-cleave -d ./docs -p ./libs/ngx-cleave/tsconfig.lib.json --disablePrivate --disableInternal --disableLifeCycleHooks --disableDependencies",
     "e2e": "ng e2e",
