@@ -15,7 +15,9 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "ngx-cleave": ["libs/ngx-cleave/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

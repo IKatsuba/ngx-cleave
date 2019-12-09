@@ -13,6 +13,9 @@
     },
     "sandbox": {
       "tags": []
+    },
+    "ngx-cleave": {
+      "tags": []
     }
   }
 }

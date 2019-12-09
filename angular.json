@@ -123,6 +123,44 @@
           }
         }
       }
+    },
+    "ngx-cleave": {
+      "projectType": "library",
+      "root": "libs/ngx-cleave",
+      "sourceRoot": "libs/ngx-cleave/src",
+      "prefix": "ngx-cleave",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "libs/ngx-cleave/tsconfig.lib.json",
+            "project": "libs/ngx-cleave/ng-package.json"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/ngx-cleave/tsconfig.lib.json",
+              "libs/ngx-cleave/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/ngx-cleave/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/ngx-cleave/jest.config.js",
+            "tsConfig": "libs/ngx-cleave/tsconfig.spec.json",
+            "setupFile": "libs/ngx-cleave/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "styleext": "scss"
+        }
+      }
     }
   },
   "cli": {
