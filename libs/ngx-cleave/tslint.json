@@ -1,7 +1,19 @@
 {
   "extends": "../../tslint.json",
   "rules": {
-    "directive-selector": [true, "attribute", "ngxCleave", "camelCase"],
-    "component-selector": [true, "element", "ngx-cleave", "kebab-case"]
+    "directive-selector": [
+      true,
+      "attribute",
+      "ngxCleave",
+      "camelCase"
+    ],
+    "component-selector": [
+      true,
+      "element",
+      "ngx-cleave",
+      "kebab-case"
+    ],
+    "no-input-rename": false,
+    "no-output-rename": false
   }
 }
