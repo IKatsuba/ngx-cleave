@@ -1,7 +1,11 @@
 {
   "name": "ngx-cleave",
-  "version": "0.0.0",
+  "version": "0.0.0-development",
   "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/IKatsuba/ngx-cleave.git"
+  },
   "license": "MIT",
   "scripts": {
     "affected": "nx affected",
@@ -23,6 +27,7 @@
     "lint": "nx workspace-lint && ng lint",
     "ng": "ng",
     "nx": "nx",
+    "semantic-release": "semantic-release",
     "start": "ng serve",
     "test": "ng test",
     "update": "ng update @nrwl/workspace",
@@ -55,6 +60,10 @@
     "@nrwl/cypress": "8.9.0",
     "@nrwl/jest": "8.9.0",
     "@nrwl/workspace": "8.9.0",
+    "@semantic-release/commit-analyzer": "^6.3.3",
+    "@semantic-release/github": "^5.5.5",
+    "@semantic-release/npm": "^5.3.4",
+    "@semantic-release/release-notes-generator": "^7.3.5",
     "@types/jest": "24.0.9",
     "@types/node": "~8.9.4",
     "codelyzer": "~5.0.1",
@@ -65,6 +74,7 @@
     "jest-preset-angular": "7.0.0",
     "ng-packagr": "^5.4.0",
     "prettier": "1.18.2",
+    "semantic-release": "^15.13.31",
     "ts-jest": "24.0.0",
     "ts-node": "~7.0.0",
     "tsickle": "^0.37.0",
