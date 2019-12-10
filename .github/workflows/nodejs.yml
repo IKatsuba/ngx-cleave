@@ -22,8 +22,9 @@ jobs:
       - name: npm install, build, and test
         run: |
           npm ci
-          npm test
           npm run lint
+          npm test
+          npm run e2e
           npm run build
           npm run docs
         env:
