@@ -6,12 +6,12 @@
     [
       "@semantic-release/npm",
       {
-        "pkgRoot": "dist/libs/ngx-cleave"
+        "pkgRoot": "./dist/libs/ngx-cleave"
       }
     ],
     ["@semantic-release/github", {
       "assets": [{
-        "path": "dist/libs/*",
+        "path": "./dist/libs/ngx-cleave",
         "label": "package"
       }]
     }]
