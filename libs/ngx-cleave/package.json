@@ -1,6 +1,22 @@
 {
   "name": "ngx-cleave",
   "version": "0.0.0",
+  "description": "Integration of cleave.js with Angular",
+  "keywords": [
+    "cleave.js",
+    "angular",
+    "ngx",
+    "ngx-cleave"
+  ],
+  "homepage": "https://github.com/IKatsuba/ngx-cleave#readme",
+  "bugs": {
+    "url": "https://github.com/IKatsuba/ngx-cleave/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IKatsuba/ngx-cleave.git"
+  },
+  "author": "Igor Katsuba <katsuba.igor@gmail.com>",
   "peerDependencies": {
     "@angular/common": "^8.2.11",
     "@angular/core": "^8.2.11",
