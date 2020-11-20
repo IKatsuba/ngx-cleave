@@ -14,11 +14,15 @@ describe('NgxCleaveDirective', () => {
         },
         {
           provide: ElementRef,
-          useValue: new ElementRef<HTMLInputElement>(document.createElement('input'))
+          useValue: new ElementRef<HTMLInputElement>(
+            document.createElement('input')
+          )
         },
         {
           provide: Renderer2,
-          useFactory: function getRenderer(rendererFactory: RendererFactory2): Renderer2 {
+          useFactory: function getRenderer(
+            rendererFactory: RendererFactory2
+          ): Renderer2 {
             return rendererFactory.createRenderer(null, null);
           },
           deps: [RendererFactory2]
