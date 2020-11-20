@@ -16,7 +16,7 @@ import {
 } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { isPlatformBrowser } from '@angular/common';
-import * as Cleave from 'cleave.js/dist/cleave.js';
+import Cleave from 'cleave.js';
 
 /**
  * Forced casting to boolean type
@@ -45,7 +45,7 @@ export function _isNumberValue(value: any): boolean {
 
 export type CleaveMode = 'creditCard' | 'phone' | 'date' | 'time' | 'numeral';
 export type CreditCardTypes =
-  'amex'
+  | 'amex'
   | 'mastercard'
   | 'visa'
   | 'diners'
@@ -65,16 +65,24 @@ export type NumeralThousandsGroupStyle = 'thousand' | 'lakh' | 'wan' | 'none';
 
 @Directive({
   selector: 'input[ngxCleave],textarea[ngxCleave]',
-  providers: [{ provide: NG_VALUE_ACCESSOR, useExisting: forwardRef(() => NgxCleaveDirective), multi: true }],
+  providers: [
+    {
+      provide: NG_VALUE_ACCESSOR,
+      useExisting: forwardRef(() => NgxCleaveDirective),
+      multi: true
+    }
+  ],
   exportAs: 'ngxCleave'
 })
-export class NgxCleaveDirective implements OnInit, OnDestroy, ControlValueAccessor, OnChanges {
+export class NgxCleaveDirective
+  implements OnInit, OnDestroy, ControlValueAccessor, OnChanges {
   private static ignoredProperties = ['emitRawValue'];
   /**
    * Triggered after credit card type changes.
    * The unique argument type is the type of the detected credit
    */
-  @Output('ngxCleaveCreditCardTypeChanged') creditCardTypeChanged = new EventEmitter<CreditCardTypes>();
+  @Output('ngxCleaveCreditCardTypeChanged')
+  creditCardTypeChanged = new EventEmitter<CreditCardTypes>();
 
   /**
    * A mode of Cleave.js
@@ -124,7 +132,8 @@ export class NgxCleaveDirective implements OnInit, OnDestroy, ControlValueAccess
    * - wan: Chinese numbering group style. It groups numbers in 10-thousand(万, 萬) and the delimiter occurs every 4 digits. 123,4567.89
    * - none: Does not group thousands. 1234567.89
    */
-  @Input('ngxCleaveNumeralThousandsGroupStyle') numeralThousandsGroupStyle: NumeralThousandsGroupStyle = 'thousand';
+  @Input('ngxCleaveNumeralThousandsGroupStyle')
+  numeralThousandsGroupStyle: NumeralThousandsGroupStyle = 'thousand';
 
   /**
    * A String value indicates the numeral decimal mark.
@@ -159,10 +168,11 @@ export class NgxCleaveDirective implements OnInit, OnDestroy, ControlValueAccess
   /**
    * @internal
    */
-  constructor(private elementRef: ElementRef<HTMLInputElement>,
-              @Inject(PLATFORM_ID) private platformId,
-              private renderer: Renderer2) {
-  }
+  constructor(
+    private elementRef: ElementRef<HTMLInputElement>,
+    @Inject(PLATFORM_ID) private platformId,
+    private renderer: Renderer2
+  ) {}
 
   private _lowercase = false;
 
@@ -379,7 +389,11 @@ export class NgxCleaveDirective implements OnInit, OnDestroy, ControlValueAccess
 
   setDisabledState(isDisabled: boolean): void {
     if (isDisabled) {
-      this.renderer.setAttribute(this.elementRef.nativeElement, 'disabled', 'disabled');
+      this.renderer.setAttribute(
+        this.elementRef.nativeElement,
+        'disabled',
+        'disabled'
+      );
     } else {
       this.renderer.removeAttribute(this.elementRef.nativeElement, 'disabled');
     }
@@ -394,9 +408,14 @@ export class NgxCleaveDirective implements OnInit, OnDestroy, ControlValueAccess
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    const changedProperties = Object.keys(changes).filter(name => !NgxCleaveDirective.ignoredProperties.includes(name));
+    const changedProperties = Object.keys(changes).filter(
+      name => !NgxCleaveDirective.ignoredProperties.includes(name)
+    );
 
-    if (changedProperties.length && !Object.values(changes).every(event => event.firstChange)) {
+    if (
+      changedProperties.length &&
+      !Object.values(changes).every(event => event.firstChange)
+    ) {
       this.createCleaveInstance();
     }
   }
@@ -425,7 +444,8 @@ export class NgxCleaveDirective implements OnInit, OnDestroy, ControlValueAccess
           ...config,
           creditCard: true,
           creditCardStrictMode: this.creditCardStrictMode,
-          onCreditCardTypeChanged: (type: CreditCardTypes) => this.creditCardTypeChanged.emit(type)
+          onCreditCardTypeChanged: (type: CreditCardTypes) =>
+            this.creditCardTypeChanged.emit(type)
         };
         break;
       case 'phone':
@@ -484,9 +504,7 @@ export class NgxCleaveDirective implements OnInit, OnDestroy, ControlValueAccess
     return config;
   }
 
-  private touch = () => {
-  };
+  private touch = () => {};
 
-  private change = (_: any) => {
-  };
+  private change = (_: any) => {};
 }
